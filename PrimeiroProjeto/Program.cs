@@ -10,48 +10,131 @@ namespace PrimeiroProjeto{
 	{
         static void Main(string[] args)
         {
-            int resultado = 0;
-            char repetir;
+            bool sair = false;
 
-            do
-            { 
+            while (!sair)
+            {
                 Console.WriteLine("Qual operção deseja fazer?");
                 Console.WriteLine("1 - Soma");
                 Console.WriteLine("2 - Subtração");
                 Console.WriteLine("3 - Multiplicação");
-                Console.WriteLine("4 - Divisão \n");
+                Console.WriteLine("4 - Divisão");
+                Console.WriteLine("5 - Raiz");
+                Console.WriteLine("6 - Potencia");
+                Console.WriteLine("7 - Sair \n");
 
                 int calculo = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("\nDigite o primeiro número da operação:");
-                int num1 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Digite o segundo número da operação:");
-                int num2 = int.Parse(Console.ReadLine());
-                
                 switch (calculo)
                 {
                     case 1:
-                        resultado = num1 + num2;
+                        Soma();
                         break;
                     case 2:
-                        resultado = num1 - num2;
+                        Sub();
                         break;
                     case 3:
-                        resultado = num1 * num2;
+                        Mult();
                         break;
                     case 4:
-                        resultado = num1 / num2;
+                        Div();
+                        break;
+                    case 5:
+                        Raiz();
+                        break;
+                    case 6:
+                        Pot();
+                        break;
+                    case 7:
+                        sair = true;
                         break;
                     default:
                         Console.WriteLine("Operação indefinida! \n");
                         break;
                 }
-                Console.WriteLine("\nResultado de sua operação é: " + resultado);
-                Console.WriteLine("\nDeseja efetuar uma outra operação (S/N)?");
-                repetir = char.Parse(Console.ReadLine());
-            } while (repetir == 's');
-            Console.WriteLine("Obrigado por utilizar minha calculadora com DoWhile e Switch Case!");
+            }
+        }
+
+        static void Soma()
+        {
+            Console.WriteLine("\nCalculo de soma!\n");
+            Console.WriteLine("Insira o primeiro número da soma: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o segundo número da soma: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int resultado = num1 + num2;
+            Console.WriteLine($"\nResultado da sua soma é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
             Console.ReadLine();
+            Console.Clear();
+        }
+
+        static void Sub()
+        {
+            Console.WriteLine("\nCalculo de subtração!\n");
+            Console.WriteLine("Insira o primeiro número da subtração: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o segundo número da subtração: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int resultado = num1 - num2;
+            Console.WriteLine($"\nResultado da sua subtração é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        static void Mult()
+        {
+            Console.WriteLine("\nCalculo de multiplicação!\n");
+            Console.WriteLine("Insira o primeiro número da multiplicação: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o segundo número da multiplicação: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int resultado = num1 * num2;
+            Console.WriteLine($"\nResultado da sua multiplicação é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        static void Div()
+        {
+            Console.WriteLine("\nCalculo de divisão!\n");
+            Console.WriteLine("Insira o primeiro número da divisão: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o segundo número da divisão: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int resultado = num1 / num2;
+            Console.WriteLine($"\nResultado da sua divisão é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        static void Raiz()
+        {
+            Console.WriteLine("\nCalculo de raiz!\n");
+            Console.WriteLine("Insira o valor da sua raiz: ");
+            int num1 = int.Parse(Console.ReadLine());
+            int resultado = (int)Math.Sqrt(num1);
+            Console.WriteLine($"\nResultado da sua raiz é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        static void Pot()
+        {
+            Console.WriteLine("\nCalculo de potencia!\n");
+            Console.WriteLine("Insira o valor da base: ");
+            int baseNum1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o valor do expoente: ");
+            int expNum2 = int.Parse(Console.ReadLine());
+            int resultado = (int)Math.Pow(baseNum1, expNum2);
+            Console.WriteLine($"\nResultado da sua potenciação é: {resultado}\n");
+            Console.WriteLine("Pressione enter para voltar ao menu!");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }
