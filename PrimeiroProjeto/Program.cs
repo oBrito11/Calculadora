@@ -14,7 +14,7 @@ namespace PrimeiroProjeto{
 
             while (!sair)
             {
-                Console.WriteLine("Qual operção deseja fazer?");
+                Console.WriteLine("Qual operação deseja fazer?");
                 Console.WriteLine("1 - Soma");
                 Console.WriteLine("2 - Subtração");
                 Console.WriteLine("3 - Multiplicação");
@@ -57,7 +57,7 @@ namespace PrimeiroProjeto{
 
         static void Soma()
         {
-            Console.WriteLine("\nCalculo de soma!\n");
+            Console.WriteLine("\nCálculo de soma!\n");
             Console.WriteLine("Insira o primeiro número da soma: ");
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o segundo número da soma: ");
@@ -71,7 +71,7 @@ namespace PrimeiroProjeto{
 
         static void Sub()
         {
-            Console.WriteLine("\nCalculo de subtração!\n");
+            Console.WriteLine("\nCálculo de subtração!\n");
             Console.WriteLine("Insira o primeiro número da subtração: ");
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o segundo número da subtração: ");
@@ -85,7 +85,7 @@ namespace PrimeiroProjeto{
 
         static void Mult()
         {
-            Console.WriteLine("\nCalculo de multiplicação!\n");
+            Console.WriteLine("\nCálculo de multiplicação!\n");
             Console.WriteLine("Insira o primeiro número da multiplicação: ");
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o segundo número da multiplicação: ");
@@ -99,13 +99,15 @@ namespace PrimeiroProjeto{
 
         static void Div()
         {
-            Console.WriteLine("\nCalculo de divisão!\n");
+            Console.WriteLine("\nCálculo de divisão!\n");
             Console.WriteLine("Insira o primeiro número da divisão: ");
             int num1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o segundo número da divisão: ");
             int num2 = int.Parse(Console.ReadLine());
-            int resultado = num1 / num2;
-            Console.WriteLine($"\nResultado da sua divisão é: {resultado}\n");
+            double resultado = (double)num1 / (double)num2;
+            double numeroDouble = resultado;
+            string numeroDecimal = numeroDouble.ToString("F1", CultureInfo.InvariantCulture);
+            Console.WriteLine($"\nResultado da sua divisão é: {numeroDecimal}\n");
             Console.WriteLine("Pressione enter para voltar ao menu!");
             Console.ReadLine();
             Console.Clear();
@@ -113,11 +115,13 @@ namespace PrimeiroProjeto{
 
         static void Raiz()
         {
-            Console.WriteLine("\nCalculo de raiz!\n");
+            Console.WriteLine("\nCálculo de raiz!\n");
             Console.WriteLine("Insira o valor da sua raiz: ");
             int num1 = int.Parse(Console.ReadLine());
-            int resultado = (int)Math.Sqrt(num1);
-            Console.WriteLine($"\nResultado da sua raiz é: {resultado}\n");
+            double resultado = (double)Math.Sqrt((double)num1);
+            double numeroDouble = (double)resultado;
+            string numeroDecimal = numeroDouble.ToString("F2", CultureInfo.InvariantCulture);
+            Console.WriteLine($"\nResultado da sua raiz é: {numeroDecimal}\n");
             Console.WriteLine("Pressione enter para voltar ao menu!");
             Console.ReadLine();
             Console.Clear();
@@ -125,7 +129,7 @@ namespace PrimeiroProjeto{
 
         static void Pot()
         {
-            Console.WriteLine("\nCalculo de potencia!\n");
+            Console.WriteLine("\nCálculo de potencia!\n");
             Console.WriteLine("Insira o valor da base: ");
             int baseNum1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o valor do expoente: ");
